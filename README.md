@@ -9,9 +9,5 @@
 suck and ki
 
 ### Develop Diagram
-
-```mermaid
-graph LR
-A((VueJs)) -- REST --> B((NodeJs))
-B --> C(MariaDB/MongoDB)
-```
+[Editor](https://mermaidjs.github.io/mermaid-live-editor/)
+<img src="https://github.com/ghk829/KangisMarket/blob/develop/static/ServiceLogic.svg"></img>
