@@ -6,7 +6,7 @@
 
 ## Developer
 
-suck and ki
+seok and ki
 
 ### Develop Diagram
 [Editor](https://mermaidjs.github.io/mermaid-live-editor/)
