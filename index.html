@@ -4,36 +4,8 @@
   <meta charset="utf-8" />
   <title>KangisMarket</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
-    <div id="app">
-      <hello-component
-        :title-prop="title"
-        :message-prop="message"
-      ></hello-component>
-    </div>
-  
-    <script>
-      const helloComponent = {
-        props: {
-          titleProp: String,
-          messageProp: String
-        },
-        template: '<div><h1>{{ titleProp }}</h1><p>{{ messageProp }}</p></div>'
-      }
-
-      const app = new Vue({
-        el: '#app',
-        components: {
-          'hello-component': helloComponent
-        },
-        data: {
-          title: '저는 하위 컴포넌트에 전달될 거예요!',
-          message: '저두요!'
-        }
-      })
-  
-    </script>
-  </body>
+	<p>GuenHwa is crazy</p>    
+</body>
 </html>
