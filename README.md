@@ -53,13 +53,6 @@
 
 	댓글, 화가의 말, 조회수, 예술품 사진 이 들어가야 한다.
 
-
-### SERVICE DIAGRAM
-
-Controller와 서비스를 분리할 지는 아직 고민중
-
-![CRUD_plan](./assets/backServiceDiagram.svg)
-
 ## Developer
 
 seok and ki
