@@ -6,9 +6,13 @@
     "start": "node app.js"
   },
   "dependencies": {
-    "express": "3.2.6",
+    "express": "^4.16.3",
     "jade": "*",
+    "module-alias": "^2.1.0",
     "mongoose": "^5.2.12",
     "vue": "^2.5.17"
+  },
+  "_moduleAliases": {
+      "@controller": "nodeController"
   }
 }
