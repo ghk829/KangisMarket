@@ -1,4 +1,11 @@
 exports.getArts = function(req, res){
+	require('module-alias/register');
+	const service = require("@service/artService")();
+	var arts = service.getArts();
+	res.json(arts);
+};
+
+exports.registerArt = function(req,res){
 	var reqData = req.body;
 	require('module-alias/register');
 	const service = require("@service/artService")();
@@ -16,4 +23,5 @@ exports.getArts = function(req, res){
         res.json({result: 1});
 
     });
-};
+	
+}
