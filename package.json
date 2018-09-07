@@ -15,6 +15,7 @@
   },
   "_moduleAliases": {
     "@controller": "controller",
-    "@model": "model"
+    "@model": "model",
+    "@service" : "service"
   }
 }
