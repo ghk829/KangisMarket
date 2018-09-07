@@ -15,6 +15,10 @@ app.set('port', process.env.PORT || 3000);
 app.set('rootDir',__dirname)
 app.set('view engine', 'jade');
 
+var bodyParser = require('body-parser');
+
+app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.json());
 
 // routes
 var index = require('./routes/index')(app)
