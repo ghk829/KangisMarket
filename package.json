@@ -14,6 +14,7 @@
     "vue": "^2.5.17"
   },
   "_moduleAliases": {
+    "@route" : "route",
     "@controller": "controller",
     "@model": "model",
     "@service" : "service"

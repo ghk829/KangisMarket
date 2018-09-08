@@ -21,10 +21,11 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 
 // routes
-var index = require('./routes/index')(app)
-, art = require('./routes/art')(app)
-, artist = require('./routes/artist')(app)
-, comment = require('./routes/comment')(app);
+require('module-alias/register');
+var index = require('@route/index')(app)
+, art = require('@route/art')(app)
+, artist = require('@route/artist')(app)
+, comment = require('@route/comment')(app);
 
 app.use('/', index);
 app.use('/art',art);
