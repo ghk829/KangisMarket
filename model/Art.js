@@ -3,7 +3,9 @@ var Schema = mongoose.Schema;
 
 var artSchema = new Schema({
     title: String,
-    author: String,
+    //author: {type:Schema.Types.ObjectId,ref:'user'},
+    // 임시로 loginId로
+    author : String,
     register_date: { type: Date, default: Date.now  },
     comments : [{ type: Schema.Types.ObjectId, ref: 'comment' }],
     price : Number,
