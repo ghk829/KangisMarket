@@ -2,7 +2,6 @@ artService = function(){
 	return {
 		registerArt : function(reqData){
 			var result;
-			require('module-alias/register');
 			const Art = require("@model/Art")
 			
 			var art = new Art();
@@ -23,7 +22,6 @@ artService = function(){
 										},
 		getArts : function(res){
 			return new Promise(function(resolved,rejected){
-				require('module-alias/register');
 				const Art = require("@model/Art")
 				// TO-DO : Query 구성
 				 Art.find(function(err, arts){
@@ -34,7 +32,6 @@ artService = function(){
 		},
 		getArtDesc : function(reqData){
 			return new Promise(function(resolved,rejected){
-				require('module-alias/register');
 				const Art = require("@model/Art");
 				const Comment = require("@model/Comment");
 				var mongoose = require('mongoose');

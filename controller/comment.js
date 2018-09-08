@@ -1,5 +1,4 @@
 exports.addComment = function(req, res){
-	require('module-alias/register');
 	const service = require("@service/commentService")();
 	var reqData = req.body;
 	var arts = service.addComment(reqData);

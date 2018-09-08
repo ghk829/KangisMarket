@@ -1,7 +1,6 @@
 commentService = function(){
 	return {
 		addComment : function(reqData){
-			require('module-alias/register');
 			var mongoose = require('mongoose');
 			const Art = require("@model/Art");
 			const Comment = require("@model/Comment");
@@ -24,7 +23,6 @@ commentService = function(){
 			
 										},
 		updateComment : function(reqData){
-			require('module-alias/register');
 			const Art = require("@model/Art")
 			// TO-DO : Query 구성
 			 Art.find(function(err, arts){

@@ -16,7 +16,6 @@ exports.getArts = function(req, res){
 
 exports.registerArt = function(req,res){
 	var reqData = req.body;
-	require('module-alias/register');
 	const service = require("@service/artService")();
 	var result = service.registerArt(reqData);
 	console.log(result);
@@ -27,7 +26,6 @@ exports.registerArt = function(req,res){
 
 exports.getArtDesc = function(req,res){
 	var reqData = req.query;
-	require('module-alias/register');
 	const service = require("@service/artService")();
 	service.getArtDesc(reqData).then(function(comments){
 		res.json(comments);
