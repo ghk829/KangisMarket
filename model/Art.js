@@ -10,7 +10,9 @@ var artSchema = new Schema({
     comments : [{ type: Schema.Types.ObjectId, ref: 'comment' }],
     price : Number,
     imageSrc : [String],
-    description : String
+    description : String,
+    Status : String,
+    allow_date : Date
 });
 
 module.exports = mongoose.model('art', artSchema);
