@@ -24,10 +24,12 @@ app.use(bodyParser.json());
 var index = require('./routes/index')(app)
 , art = require('./routes/art')(app)
 , artist = require('./routes/artist')(app)
+, comment = require('./routes/comment')(app);
+
 app.use('/', index);
 app.use('/art',art);
 app.use('/artist',artist);
-
+app.use('/comment',comment);
 var server = http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
