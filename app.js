@@ -1,13 +1,13 @@
 
 /**
- * Module dependencies.
+ * Kangis App
  */
 
 var express = require('express')
   , http = require('http')
   , path = require('path');
 
-var app = express();
+  var app = express();
 
 
 // all environments
@@ -15,8 +15,8 @@ app.set('port', process.env.PORT || 3000);
 app.set('rootDir',__dirname)
 app.set('view engine', 'jade');
 
+// Request Body Json 형태로 읽을 수 있는 라이브러리
 var bodyParser = require('body-parser');
-
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 
