@@ -7,15 +7,17 @@ commentService = function(){
 			var artId = reqData.artId;
 			Art.findById(artId,function(err,art){
 				if(err) console.log(err);
+				
 				var comment = new Comment();
 				comment.register = reqData.register;
 				comment.comment = reqData.comment;
 				comment.art = mongoose.Types.ObjectId(art._id);
 				art.comments.push(comment._id);
+
 				comment.save(function(err,referComment){
-				if(err)console.log(err)
-				console.log(referComment);
-				art.save(function(err,result){
+					if(err)console.log(err)
+					console.log(referComment);
+					art.save(function(err,result){
 					console.log(result)
 				})	
 				})
