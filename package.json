@@ -11,12 +11,13 @@
     "jade": "*",
     "module-alias": "^2.1.0",
     "mongoose": "^5.2.12",
-    "vue": "^2.5.17"
+    "vue": "^2.5.17",
+    "winston": "^3.1.0"
   },
   "_moduleAliases": {
-    "@route" : "route",
+    "@route": "route",
     "@controller": "controller",
     "@model": "model",
-    "@service" : "service"
+    "@service": "service"
   }
 }

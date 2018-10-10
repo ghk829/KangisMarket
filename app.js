@@ -9,7 +9,43 @@ var express = require('express')
 
   var app = express();
 
+var winston = require('winston');
+const logColor = {
+emerg:'red',  
+alert:'red',
+crit:'red',
+error:'yellow',
+warning:'yellow',
+notice:'yellow',
+info:'blue',
+debug:'blue'
+}
+winston.addColors(logColor);
+var logger = winston.createLogger({
 
+  levels: winston.config.syslog.levels,
+  // 아래에서 설명할 여러개의 transport를 추가할 수 있다.
+  transports: [
+      // Console transport 추가
+      new (winston.transports.Console)({
+        format : winston.format.combine(
+          winston.format.colorize(),
+          winston.format.timestamp(),
+          winston.format.align()
+        )
+
+      }),
+     
+      // File transport 추가
+     new (winston.transports.File)({
+         // filename property 지정
+         filename: 'somefile.log'
+     })
+  ]
+});
+logger.emerg("a");
+logger.error("b");
+logger.info("c");
 // all environments
 app.set('port', process.env.PORT || 3000);
 app.set('rootDir',__dirname)
@@ -36,7 +72,7 @@ app.use('/art',art);
 app.use('/artist',artist);
 app.use('/comment',comment);
 var server = http.createServer(app).listen(app.get('port'), function(){
-  console.log('Express server listening on port ' + app.get('port'));
+  logger.info('Express server listening on port ' + app.get('port'));
 });
 
 
@@ -47,7 +83,7 @@ var db = mongoose.connection;
 
 db.on('error', console.error);
 db.once('open', function(){
- console.log("Connected to mongod server");
+ logger.info("Connected to mongod server");
 });
 
-mongoose.connect('mongodb://heroku_7rzgg5js:kjn2hj0mimru1q4uoq392jvr3e@ds143932.mlab.com:43932/heroku_7rzgg5js');
+mongoose.connect('mongodb://heroku_7rzgg5js:kjn2hj0mimru1q4uoq392jvr3e@ds143932.mlab.com:43932/heroku_7rzgg5js',{ useNewUrlParser: true });

@@ -1,0 +1,21 @@
+{"message":"Express server listening on port 3000","level":"crit"}
+{"message":"a","level":"emerg"}
+{"message":"b","level":"error"}
+{"message":"c","level":"info"}
+{"message":"Express server listening on port 3000","level":"info"}
+{"message":"Connected to mongod server","level":"info"}
+{"message":"a","level":"emerg"}
+{"message":"b","level":"error"}
+{"message":"c","level":"info"}
+{"message":"Express server listening on port 3000","level":"info"}
+{"message":"Connected to mongod server","level":"info"}
+{"message":"a","level":"emerg"}
+{"message":"b","level":"error"}
+{"message":"c","level":"info"}
+{"message":"Express server listening on port 3000","level":"info"}
+{"message":"Connected to mongod server","level":"info"}
+{"message":"a","level":"emerg"}
+{"message":"b","level":"error"}
+{"message":"c","level":"info"}
+{"message":"Express server listening on port 3000","level":"info"}
+{"message":"Connected to mongod server","level":"info"}
