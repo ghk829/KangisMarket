@@ -28,6 +28,10 @@ var index = require('@route/index')(app)
 , comment = require('@route/comment')(app);
 
 app.use('/', index);
+app.use("/assets",express.static("assets"))
+app.use("/javascript",express.static("javascript"))
+app.use("/style",express.static("style"))
+app.use("/static",express.static("static"))
 app.use('/art',art);
 app.use('/artist',artist);
 app.use('/comment',comment);
