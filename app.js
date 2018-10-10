@@ -10,7 +10,18 @@ var express = require('express')
   var app = express();
 
 var winston = require('winston');
-const logColor = {
+const logConfig = {
+levels:{
+emerg:0,  
+alert:1,
+crit:2,
+error:3,
+warning:4,
+notice:5,
+info:6,
+debug:7	
+}
+,colors:{
 emerg:'red',  
 alert:'red',
 crit:'red',
@@ -19,15 +30,16 @@ warning:'yellow',
 notice:'yellow',
 info:'blue',
 debug:'blue'
-}
-winston.addColors(logColor);
-var logger = winston.createLogger({
+}}
 
+var logger = winston.createLogger({
   levels: winston.config.syslog.levels,
   // 아래에서 설명할 여러개의 transport를 추가할 수 있다.
   transports: [
       // Console transport 추가
+	  
       new (winston.transports.Console)({
+
         format : winston.format.combine(
           winston.format.colorize(),
           winston.format.timestamp(),
@@ -37,15 +49,12 @@ var logger = winston.createLogger({
       }),
      
       // File transport 추가
-     new (winston.transports.File)({
+     /*new (winston.transports.File)({
          // filename property 지정
          filename: 'somefile.log'
-     })
+     })*/
   ]
 });
-logger.emerg("a");
-logger.error("b");
-logger.info("c");
 // all environments
 app.set('port', process.env.PORT || 3000);
 app.set('rootDir',__dirname)
